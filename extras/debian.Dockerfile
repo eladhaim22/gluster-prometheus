@@ -11,7 +11,9 @@ RUN set -ex && \
 
 COPY . .
 
-RUN scripts/install-reqs.sh
+#RUN scripts/install-reqs.sh
+RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.38.0
 RUN PREFIX=/app make
 RUN PREFIX=/app make install
 

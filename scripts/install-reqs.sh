@@ -37,7 +37,7 @@ bootstrap_platform() {
 
 install_dep() {
   DEPVER="v0.5.0"
-  DEPURL="https://github.com/golang/dep/releases/download/${DEPVER}/dep-linux-amd64"
+  DEPURL="https://github.com/golang/dep/releases/download/${DEPVER}/dep-linux-arm"
   if type dep >/dev/null 2>&1; then
     local version
     version=$(dep version | awk '/^ version/{print $3}')
